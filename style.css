@@ -1,0 +1,11 @@
+h1,h4{
+    text-align: center;
+}
+.khu-vuc,.doi-tuong{
+    width: fit-content;
+    margin: 0 auto;
+}
+.tinhdiem,.tinh-tien-dien,.tinh-tien-thue,.tinh-tien-cap{
+    display: flex;
+    justify-content: center;
+}

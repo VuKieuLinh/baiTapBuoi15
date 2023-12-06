@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bài Tập Buổi 15</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Bài tập 1: Quản Lý Tuyển Sinh</h1>
+    <div class="form-group">
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-warning"> Điểm chuẩn của hội đồng</button>
+            </div>
+            <input type="text" class="form-control " id="diemChuan" placeholder="Mời nhập điểm chuẩn của hội đồng">
+        </div>
+        <div class="form-group mt-5">
+            <div class="input-group mt-5">
+                <div class="input-group-prepend">
+                    <button class="btn btn-success"> Môn Thứ Nhất</button>
+                </div>
+                <input type="text" class="form-control " id="mon1" placeholder="Mời nhập điểm môn thứ nhất">
+
+            </div>
+            <div class="input-group mt-5">
+                <div class="input-group-prepend">
+                    <button class="btn btn-success"> Môn Thứ Hai</button>
+                </div>
+                <input type="text" class="form-control " id="mon2" placeholder="Mời nhập điểm môn thứ hai">
+
+            </div>
+            <div class="input-group mt-5">
+                <div class="input-group-prepend">
+                    <button class="btn btn-success"> Môn Thứ Ba</button>
+                </div>
+                <input type="text" class="form-control " id="mon3" placeholder="Mời nhập điểm môn thứ ba">
+
+            </div>
+        </div>
+        <div class="form-group mt-5">
+            <h4>Điểm ưu tiên</h4>
+            <div class="diem-uu-tien row">
+                <div class="col-6">
+                    <div class="khu-vuc">
+                        <span class="btn btn-success"> Khu Vực Ưu Tiên</span>
+                        <div class="input-group-prepend">
+                            <label for="khuVucA">Khu Vực A</label>
+                            <input type="checkbox" name="" id="khuVucA">
+                        </div>
+                        <div class="input-group-prepend">
+                            <label for="khuVucB"> Khu Vực B</label>
+                            <input type="checkbox" name="" id="khuVucB">
+                        </div>
+                        <div class="input-group-prepend">
+                            <label for="khuVucC">Khu Vực C</label>
+                            <input type="checkbox" name="" id="khuVucC">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-6 ">
+                    <div class="doi-tuong">
+                        <span class="btn btn-danger">Đối Tượng Ưu Tiên</span>
+                        <div class="input-group-prepend">
+                            <label for="doiTuong1">Đối Tượng 1</label>
+                            <input type="checkbox" name="" id="doiTuong1">
+                        </div>
+                        <div class="input-group-prepend">
+                            <label for="kdoiTuong2">Đối Tượng 2</label>
+                            <input type="checkbox" name="" id="doiTuong2">
+                        </div>
+                        <div class="input-group-prepend">
+                            <label for="doiTuong3">Đối Tượng 3</label>
+                            <input type="checkbox" name="" id="doiTuong3">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="tinhdiem">
+            <button class="btn btn-warning" id="btn-tinhDiem" onclick="tinhDiemTongKet()">Tính điểm </button>
+        </div>
+
+    </div>
+
+    <br>
+    <hr>
+    <h1>Bài tập 2: Tính Tiền Điện</h1>
+    <div class="form-group">
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-warning"> Họ Và Tên</button>
+            </div>
+            <input type="text" class="form-control" id="ten" placeholder="Mời nhập Họ và Tên">
+        </div>
+
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-success"> Số Điện Tiêu Thụ</button>
+            </div>
+            <input type="text" class="form-control" id="soDienTieuThu" placeholder="Mời nhập Số điện tiêu thụ">
+        </div>
+        <br>
+        <div class="tinh-tien-dien">
+            <button class="btn btn-warning" id="btn-tinh-tien-dien" onclick="tinhTienDien()">Tính Tiền Điện</button>
+        </div>
+        <div class="mt-2 alert alert-success">kết quả: <span id="tongTien"></span></div>
+    </div>
+    <br>
+    <hr>
+    <h1>Bài tập 3: Tính Thuế Thu Nhập Cá Nhân</h1>
+    <div class="form-group">
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-success"> Họ Và Tên</button>
+            </div>
+            <input type="text" class="form-control" id="ten-nguoi-dong-thue" placeholder="Mời nhập Họ và Tên">
+        </div>
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-success"> tổng thu nhập năm</button>
+            </div>
+            <input type="text" class="form-control" id="tong-thu-nhap" placeholder="Mời nhập tổng thu nhập năm">
+        </div>
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-success">số
+                    người phụ thuộc</button>
+            </div>
+            <input type="text" class="form-control" id="so-nguoi-phu-thuoc" placeholder="Mời nhập số người phụ thuộc">
+        </div>
+        <br>
+        <div class="tinh-tien-thue">
+            <button class="btn btn-warning" id="btn-tinh-tien-thue" onclick="tinhThueThuNhap()">Tính Thuế Thu Nhập Cá
+                Nhân </button>
+        </div>
+        <div class="mt-2 alert alert-success">kết quả: <span id="tongTienThue"></span></div>
+    </div>
+    <br>
+    <hr>
+    <h1>Bài tập 4: Tính Tiền Cáp</h1>
+    <div>
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-success">Mã Khách Hàng:</button>
+            </div>
+            <input type="text" id="maKhachHang">
+        </div>
+
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-success">Loại Khách Hàng:</button>
+            </div>
+            <select id="loaiKhachHang" onclick="hienThiNhapKetNoi()">
+                <option value="nhaDan">Nhà Dân</option>
+                <option value="doanhNghiep">Doanh Nghiệp</option>
+            </select>
+        </div>
+
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-success">Số Kết Nối:</button>
+            </div>
+            <input type="number" id="soKetNoi">
+        </div>
+
+        <div class="input-group mt-5">
+            <div class="input-group-prepend">
+                <button class="btn btn-success">Số Kênh Cao Cấp:</button>
+            </div>
+            <input type="number" id="soKenhCaoCap">
+        </div>
+        <div class="tinh-tien-cap">
+            <button class="btn btn-warning" onclick="tinhHoaDon()">Tính Hóa Đơn</button>
+        </div>
+
+        <div class="mt-2 alert alert-success">kết quả: <span id="ketQua"></span></div>
+    </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./mycode.js"></script>
+</body>
+
+</html>
